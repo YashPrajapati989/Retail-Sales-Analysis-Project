@@ -176,5 +176,6 @@ Aspiring Data Analyst | SQL | Data Analytics | Business Intelligence
 
 ### Connect With Me
 
-- LinkedIn: www.linkedin.com/in/yash-prajapati-8243a0267
-- GitHub: https://github.com/Yash-prajapati11
+- LinkedIn:https://www.linkedin.com/in/yash-prajapati-2b99392b8?utm_source=share_via&utm_content=profile&utm_medium=member_android
+
+- GitHub: https://github.com/YashPrajapati989
