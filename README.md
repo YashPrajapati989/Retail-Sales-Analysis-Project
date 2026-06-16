@@ -1,235 +1,238 @@
-# 🛒 Retail Sales Analysis Using SQL | Data Analytics Portfolio Project
+# 🛍️ Retail Sales Analysis using PostgreSQL
 
-> **SQL-based retail transaction analysis** — data cleaning, exploratory data analysis (EDA), customer segmentation, sales trend analysis, and business intelligence using real-world retail data.
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-000000?style=for-the-badge&logo=database&logoColor=white)
+![Data Analysis](https://img.shields.io/badge/Data%20Analysis-2E8B57?style=for-the-badge&logo=googleanalytics&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-[![SQL](https://img.shields.io/badge/Language-SQL-blue?style=flat-square)](https://github.com/YashPrajapati989)
-[![Data Analysis](https://img.shields.io/badge/Domain-Data%20Analytics-green?style=flat-square)](https://github.com/YashPrajapati989)
-[![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)](https://github.com/YashPrajapati989)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yash%20Prajapati-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/yash-prajapati-2b99392b8)
-
----
-
-## 📌 Project Overview
-
-The **Retail Sales Analysis** project is a complete **SQL data analytics case study** that analyzes retail transaction data to uncover actionable business insights. It covers the full data analytics workflow — from raw data ingestion and cleaning to exploratory analysis and business reporting.
-
-This project is ideal for anyone learning:
-- **SQL for data analysis**
-- **Retail analytics and sales reporting**
-- **Business intelligence using SQL queries**
-- **Customer behavior analysis with SQL**
-- **EDA (Exploratory Data Analysis) in SQL**
-
-By applying SQL queries on retail sales data, this project transforms raw transaction records into insights that help businesses improve decision-making, optimize inventory, and boost customer engagement.
-
-**Keywords:** SQL retail analysis, sales data analysis SQL, retail EDA SQL, business intelligence SQL project, SQL portfolio project, data analyst project SQL, customer segmentation SQL, sales trend analysis SQL
+> An end-to-end SQL analytics project exploring retail transaction data — from raw table setup through to sales performance, customer behaviour, and product-level business insights using PostgreSQL.
 
 ---
 
-## 🎯 Project Objectives
+## 📌 Table of Contents
 
-- ✅ Build and manage a **retail sales database** from scratch
-- ✅ Perform **data cleaning and validation** on raw sales records
-- ✅ Execute **Exploratory Data Analysis (EDA)** using SQL
-- ✅ Analyze **customer demographics and purchasing behavior**
-- ✅ Identify **top-performing product categories**
-- ✅ Detect **sales trends and seasonal patterns**
-- ✅ Generate **business insights** through advanced SQL queries
-- ✅ Support **data-driven business decisions**
-
----
-
-## 🗄️ Database Schema
-
-### Table: `retail_sales`
-
-| Column Name | Data Type | Description |
-|---|---|---|
-| `transactions_id` | INT | Unique transaction identifier |
-| `sale_date` | DATE | Date of the transaction |
-| `sale_time` | TIME | Time of the transaction |
-| `customer_id` | INT | Unique customer identifier |
-| `gender` | VARCHAR | Customer gender (Male/Female) |
-| `age` | INT | Customer age |
-| `category` | VARCHAR | Product category (Beauty, Clothing, Electronics, etc.) |
-| `quantity` | INT | Number of units purchased |
-| `price_per_unit` | DECIMAL | Price of a single unit |
-| `cogs` | DECIMAL | Cost of Goods Sold |
-| `total_sale` | DECIMAL | Total transaction value |
+- [Project Overview](#-project-overview)
+- [Dataset Information](#-dataset-information)
+- [Database Setup](#️-database-setup)
+- [Analysis Modules](#-analysis-modules)
+- [Key Business Insights](#-key-business-insights)
+- [SQL Concepts Used](#️-sql-concepts-used)
+- [Getting Started](#-getting-started)
+- [Sample Queries](#-sample-queries)
+- [Author](#-author)
 
 ---
 
-## 🧹 Data Cleaning & Preprocessing
+## 📋 Project Overview
 
-Before analysis, the dataset was thoroughly cleaned and validated:
+This project performs a structured SQL analysis on a retail sales dataset to answer real business questions across revenue performance, customer demographics, product categories, and time-based trends.
 
-- 🔍 Identified and removed records containing **NULL values**
-- ✔️ Validated all transaction details for consistency
-- 🔗 Ensured referential integrity across customer and product data
-- 📐 Standardized data types for accurate aggregation
-- 🧪 Prepared a **clean, analysis-ready dataset**
+The workflow covers:
 
-**SQL techniques used:** `IS NULL` checks, `DELETE` statements, `UPDATE` for standardization, constraint validation.
-
----
-
-## 📊 Exploratory Data Analysis (EDA)
-
-The following EDA tasks were performed using SQL:
-
-| Analysis | Description |
-|---|---|
-| Total Transactions | Count of all sales records |
-| Unique Customers | Distinct customer count |
-| Category Distribution | Number of transactions per product category |
-| Customer Demographics | Age and gender breakdown of buyers |
-| Revenue by Category | Total sales revenue per product category |
-| Date Range | Time span of the sales dataset |
+- **Schema design** — creating a clean, typed table for retail transactions
+- **Data exploration** — understanding the structure and distribution of the dataset
+- **Business KPIs** — total revenue, order counts, average order value, and more
+- **Customer analysis** — top spenders, gender-based segmentation, age group breakdown
+- **Product analysis** — best-selling categories and high-revenue products
+- **Time analysis** — monthly and seasonal sales patterns
 
 ---
 
-## 🔍 Business Questions Answered with SQL
+## 📊 Dataset Information
 
-### 📦 Sales Analysis
-- Retrieve all sales made on a **specific date**
-- Analyze **clothing sales** with high purchase quantities
-- Calculate **total revenue by product category**
-- Identify **high-value transactions** above a threshold (e.g., ₹1000+)
+| Attribute | Value |
+|-----------|-------|
+| Database | PostgreSQL |
+| Domain | Retail / E-Commerce |
+| Key Fields | Transaction ID, Date, Customer ID, Gender, Age, Category, Quantity, Price per Unit, Total Amount |
 
-### 👥 Customer Analysis
-- Calculate the **average age** of Beauty category customers
-- Find the **top-spending customers** by total purchase value
-- Count **unique customers per product category**
-- Analyze **gender-wise purchasing patterns**
-
-### 📈 Trend & Time-Series Analysis
-- Identify the **best-selling month** each year
-- Track **monthly average sales** over time
-- Evaluate **sales performance by time-of-day shifts** (morning, afternoon, evening)
-- Discover **peak shopping periods** and seasonal demand
+The dataset captures individual retail transactions including customer demographics, product category, quantity purchased, and transaction value.
 
 ---
 
-## 📈 Key Business Insights
+## 🏗️ Database Setup
 
-### 👥 Customer Insights
-- A **small group of high-value customers** contributes disproportionately to total revenue — ideal targets for loyalty programs.
-- **Repeat purchasers** are identifiable and critical for retention strategies.
-- Different **age groups show distinct category preferences**, enabling personalized marketing.
+The table schema is designed with correct data types from the start — avoiding common pitfalls like storing numeric values as text.
 
-### 🛍️ Product & Category Insights
-- Certain **product categories consistently outperform** others in revenue.
-- **Popular categories attract more unique customers**, indicating broader market appeal.
-- High-performing categories should receive **greater inventory and marketing investment**.
-
-### 💰 Revenue & Sales Insights
-- Multiple transactions exceed **₹1000**, indicating a healthy **premium purchase segment**.
-- **Monthly sales patterns** reveal clear seasonal demand fluctuations.
-- **Peak sales periods** offer opportunities for targeted promotional campaigns.
-
-### ⏰ Operational Insights
-- Customer activity **varies significantly by time of day**, enabling smarter staffing decisions.
-- **Shift-based sales analysis** helps optimize store operations and resource allocation.
-- Identifying **dead periods** allows for promotional pushes to drive off-peak traffic.
-
----
-
-## 🛠️ SQL Concepts & Techniques Used
-
-| SQL Concept | Usage |
-|---|---|
-| `SELECT`, `WHERE`, `ORDER BY` | Data retrieval and filtering |
-| `GROUP BY` + Aggregate Functions | `SUM()`, `AVG()`, `COUNT()` for summarization |
-| `RANK()` Window Function | Ranking customers, categories, months |
-| `EXTRACT()`, `TO_CHAR()` | Date and time parsing for trend analysis |
-| Common Table Expressions (CTEs) | Modular, readable complex queries |
-| Subqueries | Nested logic for multi-step analysis |
-| `CASE WHEN` | Conditional segmentation (e.g., time shifts) |
-| `HAVING` | Post-aggregation filtering |
-| `NULL` Handling | Data quality checks and cleaning |
-
----
-
-## 📂 Project Structure
-
-```
-Retail-Sales-Analysis/
-│
-├── Retail_Sales_Analysis.sql   ← All SQL queries (cleaning, EDA, business analysis)
-├── README.md                   ← Project documentation (you are here)
-└── Dataset/                    ← Raw sales transaction data
+```sql
+CREATE TABLE retail_sales (
+    transactions_id   INT PRIMARY KEY,
+    sale_date         DATE,
+    sale_time         TIME,
+    customer_id       INT,
+    gender            VARCHAR(15),
+    age               INT,
+    category          VARCHAR(25),
+    quantity          INT,
+    price_per_unit    FLOAT,
+    cogs              FLOAT,
+    total_sale        FLOAT
+);
 ```
 
 ---
 
-## 🚀 How to Run This Project
+## 🔍 Analysis Modules
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YashPrajapati989/Retail-Sales-Analysis.git
-   cd Retail-Sales-Analysis
-   ```
+### 1. Data Exploration & Quality Checks
+- Row counts and column null checks
+- Date range of transactions
+- Distinct customers, categories, and genders
 
-2. **Set up your SQL environment**  
-   Use any SQL platform: PostgreSQL, MySQL, SQLite, or SQL Server.
+### 2. KPI Analysis
+| KPI | Description |
+|-----|-------------|
+| Total Revenue | Sum of all transaction amounts |
+| Total Orders | Count of distinct transaction IDs |
+| Avg Order Value | Revenue ÷ Order count |
+| Total Quantity Sold | Sum of all units purchased |
 
-3. **Import the dataset**  
-   Load the CSV file from the `Dataset/` folder into your database.
+### 3. Product & Category Analysis
+- Revenue breakdown by product category
+- Top-selling categories by volume (quantity)
+- Average price per unit across categories
 
-4. **Run the SQL script**  
-   Open `Retail_Sales_Analysis.sql` and execute queries section by section.
+### 4. Customer Analysis
+- Top 5 customers by total spend
+- Revenue split by gender
+- Age group segmentation (e.g., 18–25, 26–35, 36–50, 50+)
+- Customer purchase frequency
 
-5. **Explore the results**  
-   Analyze outputs for each business question.
-
----
-
-## 🎓 Skills Demonstrated
-
-This project showcases real-world skills sought by hiring managers for **Data Analyst**, **Business Analyst**, and **BI Analyst** roles:
-
-- ⚙️ **SQL Query Writing** — from basic to advanced
-- 🧹 **Data Cleaning & Preprocessing** in SQL
-- 🔎 **Exploratory Data Analysis (EDA)**
-- 📊 **Business Analytics & Reporting**
-- 👤 **Customer Segmentation** using SQL
-- 📉 **Sales Trend & Time-Series Analysis**
-- 🧮 **Data Aggregation & KPI Reporting**
-- 🪟 **Window Functions & CTEs**
+### 5. Time-Series Analysis
+- Monthly revenue trends
+- Day-of-week sales patterns
+- Best and worst performing months
+- Year-over-year comparison (if multi-year data)
 
 ---
 
-## 🏁 Conclusion
+## 💡 Key Business Insights
 
-The **Retail Sales Analysis SQL Project** demonstrates how structured query language can turn raw transactional data into **meaningful, actionable business intelligence**. Through data cleaning, EDA, and business-focused queries, this project uncovers patterns in:
-
-- 👥 Customer purchasing behavior
-- 🛍️ Product category performance
-- 📅 Seasonal and time-based sales trends
-- 💎 High-value customer identification
-
-This project is part of a growing **data analytics portfolio** and reflects the practical SQL skills used daily by Data Analysts and Business Intelligence professionals.
-
----
-
-## 🔗 Related Topics & Tags
-
-`sql` `data-analysis` `retail-analytics` `exploratory-data-analysis` `business-intelligence` `customer-segmentation` `sales-analysis` `sql-queries` `data-cleaning` `portfolio-project` `eda` `postgresql` `mysql` `data-analytics` `sales-trends` `window-functions` `cte` `aggregate-functions` `data-analyst-portfolio` `business-analytics`
+| # | Insight |
+|---|---------|
+| 1 | 💰 A small number of customers contribute disproportionately to total revenue |
+| 2 | 👗 Certain product categories consistently outperform others in both volume and revenue |
+| 3 | 📅 Sales exhibit clear monthly seasonality with distinct peak periods |
+| 4 | 👥 Gender-based spending patterns differ meaningfully across product categories |
+| 5 | 🎂 Specific age groups show higher average order values, suggesting targeting opportunities |
+| 6 | ⏰ Certain days of the week drive significantly higher transaction volumes |
 
 ---
 
-## 👨‍💻 Author
+## 🛠️ SQL Concepts Used
 
-**Yash Prajapati**  
-*Aspiring Data Analyst | SQL | Data Analytics | Business Intelligence*
+**Data Definition & Loading**
+- `CREATE TABLE` with appropriate data types
+- `COPY` / `INSERT` for data ingestion
+- `IS NULL` checks for data quality validation
 
-### 🌐 Connect With Me
+**Aggregation & Filtering**
+- `SUM`, `COUNT`, `AVG`, `ROUND`
+- `GROUP BY`, `HAVING`, `ORDER BY`, `LIMIT`
+- `WHERE` with date range and category filters
 
-| Platform | Link |
-|---|---|
-| 💼 LinkedIn | [linkedin.com/in/yash-prajapati-2b99392b8](https://www.linkedin.com/in/yash-prajapati-2b99392b8) |
-| 🐙 GitHub | [github.com/YashPrajapati989](https://github.com/YashPrajapati989) |
+**Advanced SQL**
+- `EXTRACT()` for month, day, and year from dates
+- `CASE WHEN` for age group binning
+- CTEs (`WITH` clause) for readable multi-step queries
+- Subqueries for ranked results
+- `RANK()` window function for top-N analysis
 
 ---
 
-> ⭐ **If you found this project helpful, consider giving it a star!** It helps others discover the project and motivates continued open-source contributions.
+## 🚀 Getting Started
+
+### Prerequisites
+- PostgreSQL installed
+- pgAdmin or any SQL client
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/YashPrajapati989/Retail-Sales-Analysis-Project.git
+cd Retail-Sales-Analysis-Project
+```
+
+```sql
+-- In your PostgreSQL client:
+-- 1. Create a new database
+CREATE DATABASE retail_sales_db;
+
+-- 2. Run the schema setup script
+\i sql/01_schema.sql
+
+-- 3. Load the data
+\i sql/02_data_load.sql
+
+-- 4. Run the analysis queries
+\i sql/03_analysis.sql
+```
+
+---
+
+## 🧪 Sample Queries
+
+### Revenue by Category
+```sql
+SELECT
+    category,
+    COUNT(*)                           AS total_orders,
+    SUM(total_sale)                    AS total_revenue,
+    ROUND(AVG(total_sale)::numeric, 2) AS avg_order_value
+FROM retail_sales
+GROUP BY category
+ORDER BY total_revenue DESC;
+```
+
+### Top 5 Customers by Spend
+```sql
+SELECT
+    customer_id,
+    SUM(total_sale)  AS total_spent,
+    COUNT(*)         AS total_orders
+FROM retail_sales
+GROUP BY customer_id
+ORDER BY total_spent DESC
+LIMIT 5;
+```
+
+### Monthly Sales Trend
+```sql
+SELECT
+    EXTRACT(YEAR FROM sale_date)  AS year,
+    EXTRACT(MONTH FROM sale_date) AS month,
+    ROUND(SUM(total_sale)::numeric, 2) AS monthly_revenue
+FROM retail_sales
+GROUP BY year, month
+ORDER BY year, month;
+```
+
+### Age Group Segmentation
+```sql
+SELECT
+    CASE
+        WHEN age BETWEEN 18 AND 25 THEN '18–25'
+        WHEN age BETWEEN 26 AND 35 THEN '26–35'
+        WHEN age BETWEEN 36 AND 50 THEN '36–50'
+        ELSE '50+'
+    END AS age_group,
+    COUNT(*)         AS total_orders,
+    SUM(total_sale)  AS total_revenue
+FROM retail_sales
+GROUP BY age_group
+ORDER BY total_revenue DESC;
+```
+
+---
+
+## 👤 Author
+
+**Yash Prajapati**
+
+[![GitHub](https://img.shields.io/badge/GitHub-YashPrajapati989-181717?style=for-the-badge&logo=github)](https://github.com/YashPrajapati989)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yash%20Prajapati-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/yash-prajapati-2b99392b8)
+
+---
+
+> ⭐ Found this helpful? Give it a star on GitHub!
